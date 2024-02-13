@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Мужские Кроссовки Nike Blazer Mid Suede",
+    "price": 12999,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-1.jpg?alt=media&token=ee76b2a4-1f2f-46d9-9144-395a858f56c3"
+  },
+  {
+    "id": 2,
+    "title": "Мужские Кроссовки Nike Air Max 270",
+    "price": 15600,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-11.jpg?alt=media&token=74a64355-9df2-4f4f-b712-03e7b40fecd2"
+  },
+  {
+    "id": 3,
+    "title": "Мужские Кроссовки Nike Blazer Mid Suede",
+    "price": 8499,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-12.jpg?alt=media&token=e21ff752-5e2e-4f3d-86b2-2add349f61eb"
+  },
+  {
+    "id": 4,
+    "title": "Кроссовки Puma X Aka Boku Future Rider",
+    "price": 7800,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-11.jpg?alt=media&token=74a64355-9df2-4f4f-b712-03e7b40fecd2"
+  },
+  {
+    "id": 5,
+    "title": "Кроссовки Future Rider",
+    "price": 9550,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-1.jpg?alt=media&token=ee76b2a4-1f2f-46d9-9144-395a858f56c3"
+  },
+  {
+    "id": 6,
+    "title": "Кроссовки Black Edition",
+    "price": 16999,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-11.jpg?alt=media&token=74a64355-9df2-4f4f-b712-03e7b40fecd2"
+  },
+  {
+    "id": 7,
+    "title": "Кроссовки Orange Boomb Edition",
+    "price": 7499,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-12.jpg?alt=media&token=e21ff752-5e2e-4f3d-86b2-2add349f61eb"
+  },
+  {
+    "id": 8,
+    "title": "Кроссовки Nike Air Max 270",
+    "price": 15600,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-11.jpg?alt=media&token=74a64355-9df2-4f4f-b712-03e7b40fecd2"
+  },
+  {
+    "id": 9,
+    "title": "Кроссовки Nike Air Force 1",
+    "price": 5900,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-1.jpg?alt=media&token=ee76b2a4-1f2f-46d9-9144-395a858f56c3"
+  },
+  {
+    "id": 10,
+    "title": "Кроссовки Adidas Ultraboost",
+    "price": 11500,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-11.jpg?alt=media&token=74a64355-9df2-4f4f-b712-03e7b40fecd2"
+  },
+  {
+    "id": 11,
+    "title": "Кроссовки Puma Clyde All-Pro",
+    "price": 7600,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-12.jpg?alt=media&token=e21ff752-5e2e-4f3d-86b2-2add349f61eb"
+  },
+  {
+    "id": 12,
+    "title": "Кроссовки Converse Chuck Taylor All-Star",
+    "price": 13000,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/vue-shop-da73d.appspot.com/o/sneakers-11.jpg?alt=media&token=74a64355-9df2-4f4f-b712-03e7b40fecd2"
+  }
+]
