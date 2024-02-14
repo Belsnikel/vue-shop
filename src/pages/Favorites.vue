@@ -11,7 +11,7 @@ onMounted(async () => {
     const { data } = await axios.get(
       'https://227e933d38600ce7.mokky.dev/favorites?_relations=items'
     )
-    favorites.value = data.map((item) => item.item)
+    favorites.value = data.map((obj) => obj.item)
   } catch (err) {
     console.log(err)
   }
@@ -20,7 +20,7 @@ onMounted(async () => {
 
 <template>
   <div>
-    <h2>Закладки</h2>
+    <h2 class="text-3xl font-bold mb-8" v-auto-animate>Закладки</h2>
   </div>
 
   <CardList :items="favorites" is-favorites />

@@ -1,6 +1,7 @@
 <script setup>
 import CardList from '../components/CardList.vue'
 import axios from 'axios'
+import debounce from 'lodash.debounce'
 import { reactive, inject, watch, ref, onMounted } from 'vue'
 
 const { addToCart, removeFromCart, cart } = inject('cart')
@@ -26,9 +27,9 @@ const onChangeSelect = (event) => {
   filters.sortBy = event.target.value
 }
 
-const onChangeSearchInput = (event) => {
+const onChangeSearchInput = debounce((event) => {
   filters.searchQuery = event.target.value
-}
+}, 1000)
 
 const addToFavorite = async (item) => {
   try {
@@ -64,7 +65,6 @@ const fetchFavorites = async () => {
         isFavorite: false
       }
     })
-    console.log(items.value)
   } catch (err) {
     console.log(err)
   }
@@ -115,8 +115,8 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <h2 class="text-3xl font-bold mb-8">Все Кроссовки</h2>
   <div class="flex gap-4">
+    <h2 class="flex-1 text-3xl font-bold">Все Кроссовки</h2>
     <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">
       <option value="name">По названию</option>
       <option value="price">По цене (дешёвые)</option>
