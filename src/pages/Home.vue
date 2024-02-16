@@ -14,8 +14,6 @@ const onClickAddPlus = (item) => {
   } else {
     removeFromCart(item)
   }
-
-  console.log(cart)
 }
 
 const filters = reactive({

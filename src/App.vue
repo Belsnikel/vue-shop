@@ -2,14 +2,17 @@
 import { ref, watch, provide, computed } from 'vue'
 import Header from './components/Header.vue'
 import Drawer from './components/Drawer.vue'
+import AuthForm from './components/AuthForm.vue'
 
-/**
- * CART
- */
+defineProps({
+  signIn: Boolean
+})
 
 const cart = ref([])
 
 const drawerOpen = ref(false)
+
+const authFormOpen = ref(false)
 
 const totalPrice = computed(() => cart.value.reduce((acc, item) => (acc += item.price), 0))
 
@@ -22,7 +25,12 @@ const closeDrawer = () => {
 const openDrawer = () => {
   drawerOpen.value = true
 }
-
+const openAuthForm = () => {
+  authFormOpen.value = true
+}
+const closeAuthForm = () => {
+  authFormOpen.value = false
+}
 const addToCart = (item) => {
   cart.value.push(item)
   item.isAdded = true
@@ -47,15 +55,13 @@ provide('cart', {
   addToCart,
   removeFromCart
 })
-/**
- * CART END
- */
 </script>
 
 <template>
   <Drawer v-if="drawerOpen" :total-price="totalPrice" :vatPrice="vatPrice" />
   <div class="bg-white w-4/5 m-auto rounded-xl mt-14">
-    <Header :total-price="totalPrice" @openDrawer="openDrawer" />
+    <Header :total-price="totalPrice" @openDrawer="openDrawer" @openAuthForm="openAuthForm" />
+    <AuthForm v-if="authFormOpen" @closeAuthForm="closeAuthForm" />
     <div class="p-10">
       <router-view />
     </div>

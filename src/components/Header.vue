@@ -3,7 +3,7 @@ defineProps({
   totalPrice: Number
 })
 
-const emit = defineEmits(['openDrawer'])
+const emit = defineEmits(['openDrawer', 'openAuthForm'])
 </script>
 
 <template>
@@ -30,15 +30,22 @@ const emit = defineEmits(['openDrawer'])
         <li class="flex items-center gap-3 cursor=pointer text-gray-500 hover:text-black">
           <img src="/heart.svg" alt="Cart" />
           <span>Закладки</span>
-        </li></router-link
-      >
+        </li>
+      </router-link>
 
-      <li class="flex items-center gap-3 cursor=pointer text-gray-500 hover:text-black">
+      <li
+        @click="() => emit('openAuthForm')"
+        class="flex items-center gap-3 cursor=pointer text-gray-500 hover:text-black"
+      >
         <img src="/profile.svg" alt="Cart" />
-        <span>Профиль</span>
+        <span>Войти</span>
       </li>
     </ul>
   </header>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+/* // проверяет есть ли токен в localStorage и отображает кнопку "Войти" или "Профиль"
+
+// ПЫ.СЫ. нужно записывать токен в localStorage после отправки формы */
+</style>
