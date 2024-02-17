@@ -33,13 +33,15 @@ const emit = defineEmits(['openDrawer', 'openAuthForm'])
         </li>
       </router-link>
 
-      <li
-        @click="() => emit('openAuthForm')"
-        class="flex items-center gap-3 cursor=pointer text-gray-500 hover:text-black"
-      >
-        <img src="/profile.svg" alt="Cart" />
-        <span>Войти</span>
-      </li>
+      <router-link to="/profile">
+        <li
+          @click="() => emit('openAuthForm')"
+          class="flex items-center gap-3 cursor=pointer text-gray-500 hover:text-black"
+        >
+          <img src="/profile.svg" alt="Cart" />
+          <span>Войти</span>
+        </li>
+      </router-link>
     </ul>
   </header>
 </template>
