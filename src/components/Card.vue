@@ -41,6 +41,4 @@ const visibleFavoriteButton = Boolean(props.onClickAdd)
   </div>
 </template>
 
-<script></script>
-
-<style lang="scss" scoped></style>
+<style scoped></style>
