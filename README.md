@@ -54,8 +54,10 @@ person2.sayHello(); // Вывод: Hello, my name is Bob and I am 25 years old.
 
 Конструкторы не имеют оператора return. Их задача – записать все необходимое в this, и это автоматически становится результатом.
 
-Ссылки по теме
+Ссылки по теме:
 
--
--
--
+- [Js Classes](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes)
+- [new operator](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new)
+- [constructor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/constructor)
+- [prototype](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
+- [new - live examples](https://github.com/Belsnikel/Jscourse/blob/master/js-interview-guide-master/09_new.js)
