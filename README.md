@@ -1,6 +1,8 @@
 <b>Оглавление
 
 [оператор new и функция конструктор](#оператор-new-и-функция-конструктор)
+[RegExp и регулярные выражения](#regexp-и-регулярные-выражения)
+[Наследование](#Наследование)
 
 ## Оператор new и функция конструктор.
 
@@ -61,3 +63,44 @@ person2.sayHello(); // Вывод: Hello, my name is Bob and I am 25 years old.
 - [constructor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/constructor)
 - [prototype](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
 - [new - live examples](https://github.com/Belsnikel/Jscourse/blob/master/js-interview-guide-master/09_new.js)
+
+## RegExp и регулярные выражения.
+
+Типовые регулярные выражения:
+
+/^[a-zA-Z]$/ - это регулярное выражение проверяющее, что символ в строке является буквой или цифрой.
+
+/^[\x00-\x7F]$/ - это регулярное выражение проверяющее, что символ в строке является кодировкой ASCII.
+
+## Наследование
+
+Пример наследования классов и прототипов в JavaScript
+
+```
+const Book = function(title, author) {
+  this.title = title;
+  this.author = author;
+};
+
+Book.prototype.buy = function() {
+  console.log('Buy');
+}
+
+const AudioBook = function(title, author, length) {
+  Book.call(this, title, author);
+  this.length = length;
+};
+
+AudioBook.prototype = Object.create(Book.prototype);
+AudioBook.prototype.constructor = AudioBook;
+AudioBook.prototype.log = function() {
+  console.log(`${this.title} - ${this.length}`)
+}
+
+const book = new AudioBook('War and Peace', 'Leo Tolstoy', 500);
+
+book.buy();
+book.log();
+console.log(book)
+
+```
