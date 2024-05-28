@@ -74,7 +74,33 @@ person2.sayHello(); // Вывод: Hello, my name is Bob and I am 25 years old.
 
 ## Наследование
 
-Пример наследования классов и прототипов в JavaScript
+Пример на наследовании прототипов на классах в ES6. (актуально в 99% случаях)
+
+```
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+  buy() {
+    console.log('Buy');
+  }
+}
+
+class AudioBook extends Book {
+  constructor(title, author, length) {
+    super(title, author);
+    this.length = length;
+  }
+  log() {
+    console.log(`${this.title} - ${this.length}`)
+  }
+
+}
+
+```
+
+Пример наследования прототипов на конструкторах в ES5. (устаревший вариант)
 
 ```
 const Book = function(title, author) {
@@ -102,5 +128,50 @@ const book = new AudioBook('War and Peace', 'Leo Tolstoy', 500);
 book.buy();
 book.log();
 console.log(book)
+
+```
+
+Пример шаблона игры на классах
+
+```
+
+class Enemy {
+  health;
+  constructor(health) {
+    this.health = health;
+  }
+  recieveDamage(damage) {
+    this.health = this.health - damage
+    console.log(this.health)
+  }
+}
+
+class Sword {
+  #damage;
+  constructor(damage) {
+    this.#damage = damage
+  }
+  strike(enemy) {
+    enemy.recieveDamage(this.#damage)
+  }
+}
+
+class Orc extends Enemy {
+    constructor(health) {
+    super(health);
+  }
+  recieveDamage(damage) {
+      if(Math.random() > 0.5) {
+        this.health = this.health - damage;
+      }
+    console.log(this.health);
+  }
+}
+
+const enemy = new Orc(10);
+const sword = new Sword(3);
+sword.strike(enemy);
+sword.strike(enemy);
+sword.strike(enemy);
 
 ```
