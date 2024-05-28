@@ -1,28 +1,27 @@
 import './assets/main.css'
+import 'primevue/resources/themes/lara-light-indigo/theme.css'
+import 'primevue/resources/primevue.min.css'
+import 'primeicons/primeicons.css'
 
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createPinia } from 'pinia'
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
-import App from './App.vue'
+import { initializeApp } from 'firebase/app'
+import firebaseConfig from '../firebaseConfig'
 
-import Home from './pages/Home.vue'
-import Favorites from './pages/Favorites.vue'
-import UserProfile from './pages/UserProfile.vue'
+import PrimeVue from 'primevue/config'
+import './api'
+
+import App from './App.vue'
+import router from './router'
+
+initializeApp(firebaseConfig)
 
 const app = createApp(App)
 
-const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/favorites', name: 'Favorites', component: Favorites },
-  { path: '/profile', name: 'UserProfile', component: UserProfile }
-]
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-})
-
+app.use(createPinia())
 app.use(router)
 app.use(autoAnimatePlugin)
+app.use(PrimeVue)
 
 app.mount('#app')
