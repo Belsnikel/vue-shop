@@ -2,7 +2,8 @@
 import { ref, watch, provide, computed } from 'vue'
 import Header from './components/Header.vue'
 import Drawer from './components/Drawer.vue'
-import AuthForm from './components/AuthForm.vue'
+// import AuthForm from './components/AuthForm.vue'
+import SignUp from './components/SignUp.vue'
 
 defineProps({
   signIn: Boolean
@@ -61,7 +62,8 @@ provide('cart', {
   <Drawer v-if="drawerOpen" :total-price="totalPrice" :vatPrice="vatPrice" />
   <div class="bg-white w-4/5 m-auto rounded-xl mt-14">
     <Header :total-price="totalPrice" @openDrawer="openDrawer" @openAuthForm="openAuthForm" />
-    <AuthForm v-if="authFormOpen" @closeAuthForm="closeAuthForm" />
+    <!-- <AuthForm v-if="authFormOpen" @closeAuthForm="closeAuthForm" /> -->
+    <SignUp v-if="authFormOpen" @closeAuthForm="closeAuthForm" />
     <div class="p-10">
       <router-view />
     </div>
