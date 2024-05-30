@@ -12,7 +12,9 @@
 }
 
 body {
-  background-color: rgb(247 254 231);
+  background-image: url('/public/background-main.jpg');
+  background-repeat: round;
+  background-size: cover;
 }
 #app {
   height: 100vh;

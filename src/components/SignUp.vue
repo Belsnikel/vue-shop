@@ -49,9 +49,9 @@ const signup = async () => {
             >
             <div class="mt-2">
               <input
-                v-model="onChangeEmailInput"
-                id="email"
+                v-model="email"
                 type="email"
+                id="email"
                 placeholder="LJyZy@example.com"
                 required
                 class="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-6"
@@ -72,7 +72,7 @@ const signup = async () => {
             </div>
             <div class="mt-2">
               <input
-                v-model="onChangePasswordInput"
+                v-model="password"
                 id="password"
                 name="password"
                 placeholder=""

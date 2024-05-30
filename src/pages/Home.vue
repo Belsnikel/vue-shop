@@ -116,7 +116,7 @@ onMounted(async () => {
 </script>
 <template>
   <div class="flex gap-4">
-    <h2 class="flex-1 text-3xl font-bold">Все Кроссовки</h2>
+    <h2 class="flex-1 text-3xl font-bold text-white">Книги</h2>
     <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">
       <option value="name">По названию</option>
       <option value="price">По цене (дешёвые)</option>
