@@ -60,7 +60,7 @@ provide('cart', {
 
 <template>
   <Drawer v-if="drawerOpen" :total-price="totalPrice" :vatPrice="vatPrice" />
-  <div class="bg-white w-4/5 m-auto rounded-xl mt-14">
+  <div class="bg-[#624f71e6] w-4/5 m-auto rounded-xl mt-14">
     <Header :total-price="totalPrice" @openDrawer="openDrawer" @openAuthForm="openAuthForm" />
     <!-- <AuthForm v-if="authFormOpen" @closeAuthForm="closeAuthForm" /> -->
     <SignUp v-if="authFormOpen" @closeAuthForm="closeAuthForm" />

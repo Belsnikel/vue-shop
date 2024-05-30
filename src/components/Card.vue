@@ -14,7 +14,7 @@ const visibleFavoriteButton = Boolean(props.onClickAdd)
 <template>
   <div>
     <div
-      class="relative m-10 bg-white border border-slate-100 rounded-xl p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl"
+      class="relative m-10 bg-[#ffcc74] border border-slate-100 rounded-xl p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl"
     >
       <img
         v-if="visibleFavoriteButton"
@@ -23,7 +23,7 @@ const visibleFavoriteButton = Boolean(props.onClickAdd)
         class="absolute top-8 left-8"
         @click="onClickFavorite"
       />
-      <img :src="imageUrl" alt="Sneaker" />
+      <img class="max-w-28 min-w-44" :src="imageUrl" alt="Book" />
       <p class="mt-2">{{ title }}</p>
       <div class="flex justify-between mt-5">
         <div class="flex flex-col">
