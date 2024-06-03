@@ -3,6 +3,7 @@
 [оператор new и функция конструктор](#оператор-new-и-функция-конструктор)
 [RegExp и регулярные выражения](#regexp-и-регулярные-выражения)
 [Наследование](#Наследование)
+[Принципы SOLID](#Принципы-solid)
 
 ## Оператор new и функция конструктор.
 
@@ -174,4 +175,97 @@ sword.strike(enemy);
 sword.strike(enemy);
 sword.strike(enemy);
 
+```
+
+## Принципы SOLID
+
+S - Принцип единой ответственности
+
+Каждый класс или модуль должен отвечать за одну конкретную задачу или часть функциональности и не должен включать в себя несколько разных обязанностей. Если класс выполняет несколько функций, то при изменении одной функции могут быть затронуты и другие, что приводит к сложностям в сопровождении и увеличивает риск появления ошибок.
+
+```
+class Character {
+  #inventor = [];
+  #health = 100;
+
+  pickItem(item) {
+    this.#inventor.push(item);
+  }
+  recieveDamage(damage) {
+    this.#health -= damage
+  }
+}
+
+class DB {
+  save(item) {
+    localStorage.setItem(char, item);
+  }
+  load() {
+    ///...
+  }
+}
+
+```
+
+O - Принцип открытости/закрытости
+
+Программные сущности (классы, модули, функции и т.д.) должны быть открыты для расширения, но закрыты для модификации.
+
+```
+class Treasure {
+  value = 0;
+}
+
+class Coin extends Treasure {
+  value = 1;
+}
+
+class Coin extends Treasure {
+  value = 2;
+}
+
+class Brilliant extends Treasure {
+  value = 5;
+}
+
+class Inventory {
+  #score;
+  pick(treasure) {
+    this.#score += treasure.value;
+  }
+}
+
+```
+
+L - Принцип подстановки Барбары Лисков
+
+Объекты в программе должны быть заменяемы их экземплярами производных классов без изменения корректности программы.
+
+Основная идея
+Принцип утверждает, что если S является подтипом T, то объекты типа T могут быть заменены объектами типа S (т.е. объектами подклассов S), не изменяя желаемых свойств программы (корректности, задачи и так далее)
+
+```
+class User {
+  #role = 'user';
+
+  getRole() {
+    return this.#role;
+  }
+}
+
+class Admin extends User {
+  #role = ['user', 'admin'];
+
+  getRole() {
+    return this.#role.join(', ');
+
+  }
+}
+
+function logRole(user) {
+  console.log('Role:' + user.getRole().toUpperCase());
+}
+
+logRole(new User());
+logRole(new Admin());
 ```
