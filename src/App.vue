@@ -4,6 +4,8 @@ import Header from './components/Header.vue'
 import Drawer from './components/Drawer.vue'
 // import AuthForm from './components/AuthForm.vue'
 import SignUp from './components/SignUp.vue'
+import { useAuthStore } from './stores/auth'
+// import SignIn from './components/SignIn.vue'
 
 defineProps({
   signIn: Boolean
@@ -18,6 +20,8 @@ const authFormOpen = ref(false)
 const totalPrice = computed(() => cart.value.reduce((acc, item) => (acc += item.price), 0))
 
 const vatPrice = computed(() => Math.round((totalPrice.value * 5) / 100))
+
+const authStore = useAuthStore()
 
 const closeDrawer = () => {
   drawerOpen.value = false
@@ -42,6 +46,18 @@ const removeFromCart = (item) => {
   item.isAdded = false
 }
 
+const checkUser = () => {
+  const tokens = JSON.parse(localStorage.getItem('userTokens'))
+  if (tokens) {
+    authStore.userInfo.token = tokens.token
+    authStore.userInfo.refreshToken = tokens.refreshToken
+    authStore.userInfo.expiresIn = tokens.expiresIn
+  }
+  console.log(authStore.userInfo)
+}
+
+checkUser()
+
 watch(
   cart,
   () => {
@@ -64,6 +80,7 @@ provide('cart', {
     <Header :total-price="totalPrice" @openDrawer="openDrawer" @openAuthForm="openAuthForm" />
     <!-- <AuthForm v-if="authFormOpen" @closeAuthForm="closeAuthForm" /> -->
     <SignUp v-if="authFormOpen" @closeAuthForm="closeAuthForm" />
+    <!-- <SignIn v-if="authFormOpen && signIn" @closeAuthForm="closeAuthForm" /> -->
     <div class="p-10">
       <router-view />
     </div>

@@ -4,15 +4,16 @@ defineProps({
 })
 
 const emit = defineEmits(['openDrawer', 'openAuthForm'])
+const token = JSON.parse(localStorage.getItem('userTokens'))
 </script>
 
 <template>
   <header class="flex justify-between border-b border-slate-300 px-10 py-8">
     <router-link to="/">
       <div class="flex items-center gap-4">
-        <img src="/logo.webp" alt="Logo" class="w-28" />
+        <a href="/"><img src="/logo.webp" alt="Logo" class="w-28" /></a>
         <div>
-          <h2 class="text-white text-xl font-bold uppercase">Buddy Book</h2>
+          <h2 class="text-white text-xl font-bold uppercase">Book Haven</h2>
           <p class="text-white">Лучший магазин книг</p>
         </div>
       </div>
@@ -38,7 +39,8 @@ const emit = defineEmits(['openDrawer', 'openAuthForm'])
         class="flex items-center gap-3 cursor=pointer text-white hover:text-black"
       >
         <img src="/profile.svg" alt="Cart" />
-        <span>Войти</span>
+        <span v-if="token">Личный кабинет</span>
+        <span v-if="!token">Войти</span>
       </li>
     </ul>
   </header>
